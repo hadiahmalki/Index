@@ -1,0 +1,42 @@
+@startuml travel class diagram 
+class person {
+  name: String 
+  age: number
+  email: string 
+  constructor(name: string, age: number, email: string)
+  addPudget(number: number)
+  addScenery(scene: scene)
+}
+
+class activites {
+  type: string 
+  location: string
+  time: number
+  constructor(type: string, location: string, time: number)
+}
+
+person "1" o---> "0-20" activites : add, remove
+activites ---> person : added by, removed by
+Package school {
+class Student {}
+class Teacher {}
+class Room {}
+class Dream {}
+}
+
+Student *- Dream
+Room o-- Student
+Room --> Teacher
+
+Teacher -> Student : teaches
+
+Package Farm {
+class Animal{}
+class Bird extends Animal{}
+class Chicken extends Bird{}
+}
+Dream --> Chicken
+
+
+
+@enduml
